@@ -1,0 +1,20 @@
+{% extends 'shop/base_generic.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Payment Options</h2>
+    <p>Your order is ready for checkout. Please choose your payment method.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="payment_method">Payment Method</label>
+            <select class="form-control" id="payment_method" name="payment_method">
+                <option value="COD">Cash on Delivery (COD)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
+    </form>
+</div>
+{% endblock %}
